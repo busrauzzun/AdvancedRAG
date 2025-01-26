@@ -21,11 +21,11 @@ vectorstore = Chroma.from_documents(
     documents=splits,
     collection_name='rag-chroma',
     embedding=OpenAIEmbeddings(),
-    persist_directory='./.chroma'
+    persist_directory='./chroma'
 )
 
 retriever = Chroma(
     collection_name='rag-chroma',
-    persist_directory='./.chroma',
+    persist_directory='./chroma',
     embedding_function=OpenAIEmbeddings()
 ).as_retriever()
