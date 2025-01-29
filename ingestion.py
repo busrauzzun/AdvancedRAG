@@ -11,7 +11,6 @@ urls = ['https://lilianweng.github.io/posts/2023-06-23-agent/',
         'https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/']
 
 docs = [WebBaseLoader(url).load() for url in urls]
-print(docs)
 docs_list = [item for sublist in docs for item in sublist]
 text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(chunk_size=250, chunk_overlap=0)
 
